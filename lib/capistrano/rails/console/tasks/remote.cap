@@ -1,3 +1,13 @@
+namespace :load do
+  task :defaults do
+    # add rails to rvm_map_bins
+    rvm_map_bins = fetch(:rvm_map_bins) || []
+    rvm_map_bins << :rails
+    set :rvm_map_bins, rvm_map_bins
+  end
+end
+
+
 namespace :rails do
 
   desc "Interact with a remote rails console"
